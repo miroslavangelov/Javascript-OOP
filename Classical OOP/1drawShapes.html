@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<style>
+canvas {
+	border: 2px solid black;
+}
+</style>
+<body>
+<canvas id="the-canvas" width="800" height="500" />
+
+</body>
+<script>
+
+	var canvas = document.getElementById("the-canvas"),
+		ctx = canvas.getContext("2d");
+	ctx.strokeStyle = "black";
+	
+	function DrawRect(x, y, width, height) {
+		this.x = x;
+		this.y = y;
+		this.width = width;
+		this.height = height;
+		ctx.beginPath();
+		ctx.fillRect(x, y, width, height);
+		ctx.stroke();
+	}
+	function DrawLine(x1, y1, x2, y2) {
+		this.x1 = x1;
+		this.y1 = y1; 
+		this.x2 = x2; 
+		this.y2 = y2;
+		ctx.beginPath();
+		ctx.moveTo(x1, y1);
+		ctx.lineTo(x2, y2);
+		ctx.stroke();
+	}
+	function DrawCircle(x, y, radius) {
+		this.x = x;
+		this.y = y;
+		this.raduis = radius;
+		ctx.beginPath();
+		ctx.arc(x, y, radius, 0, 2*Math.PI, false);
+		ctx.stroke();
+	}
+	var rect = new DrawRect(385, 120, 30, 80);
+	var line = new DrawLine(22, 20, 30, 45);
+	var circle = new DrawCircle(100, 150, 50);
+
+</script>
+</html>

@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Module for DOM</title>
+	<script src="jquery-1.11.2.min.js"></script>
+    <script src="dom-module.js"></script>
+</head>
+<body>
+    <div id="test"></div>
+	<ul>
+		<li id="asd">Hello</li>
+		<li>Hello</li>
+		<li>Hello</li>
+	</ul>
+    <script>
+		var div = document.createElement("div");
+		 for (var i = 1; i < 5; i++) {
+            div.innerHTML = i + '';
+            domModule.appendToBuffer('#test' , div.cloneNode(true));
+        }
+		var p = document.createElement("p");
+		 for (var i = 1; i < 3; i++) {
+            p.innerHTML = i + '';
+            domModule.appendToBuffer('#asd' , p.cloneNode(true));
+        }
+    </script>
+</body>
+</html>

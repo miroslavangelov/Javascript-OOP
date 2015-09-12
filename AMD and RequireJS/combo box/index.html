@@ -1,0 +1,49 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Combo box</title>
+<script type="text/javascript"  src="scripts/libs/require.js" data-main="scripts/main"></script>
+<style>
+	.person-item {
+		border: 1px solid black;
+		border-radius: 5px;
+		width: 200px;
+		margin: 10px;
+		cursor: pointer;
+	}
+	.person-item p {
+		font-family: Georgia;
+		margin: 5px;
+	}
+	.person-item strong {
+		font-family: Georgia;
+		margin: 5px;
+	}
+	.person-item img {
+		display: block;
+		margin: 0 auto;
+		margin-bottom: 5px;
+	}
+</style>
+</head>
+<body>
+	<div id='combobox'></div>
+<script id="post-template" type="text/x-handlebars-template">
+	<div id="selectedPerson">
+		<div class="person-item" id="person-item-{{people.[0].id}}">
+            <strong class="person-name">Name: {{people.[0].name}}</strong><p class="person-age">Age: {{people.[0].age}}</p>
+            <img src="{{people.[0].avatarUrl}}" width="100px" />
+        </div>
+	</div>
+		{{#people}}
+	    <div class="person-item" id="person-item-{{id}}">
+            <strong class="person-name">Name: {{name}}</strong><p class="person-age">Age: {{age}}</p>
+            <img src="{{avatarUrl}}" width="100px" />
+        </div>
+		{{/people}}
+</script>
+</body>
+<script>
+</script>
+</html>

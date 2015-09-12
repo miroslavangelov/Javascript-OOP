@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Module for DOM</title>
+	<script src="jquery-1.11.2.min.js"></script>
+    <script src="moving-divs.js"></script>
+</head>
+<body>
+<input type="button" value="Circle" name="circle" />
+<input type="button" value="Rect" name="rect" />
+<div id="circle"></div>
+</body>
+<script>
+$("input[name=circle]").click(function() {
+	movingDivs.add("ellipse");
+});
+$("input[name=rect]").click(function() {
+	movingDivs.add("rect");
+});
+</script>
+</html>
